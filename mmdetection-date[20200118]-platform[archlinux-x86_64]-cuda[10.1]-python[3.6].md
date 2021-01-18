@@ -128,10 +128,10 @@ inference_detector(model, 'demo/demo.jpg')
 
 - mmdetection No module named 'mmcv.\_ext'  
    这可能是 mmcv 安装错误导致的。应该安装的包为 mmcv-full，而安装的包是 mmcv。如果遇到这样的错误，请卸载 mmcv 包并重新安装 mmcv-full 包。具体安装方法参照上文中出现的命令行，或参考[官方说明](https://github.com/open-mmlab/mmcv)配置其他版本的 mmcv。相关说明：
-  The rule for installing the latest mmcv-full is as follows:
-  pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/{cu_version}/{torch_version}/index.html
-  Please replace {cu_version} and {torch_version} in the url to your desired one. For example, to install the latest mmcv-full with CUDA 11 and PyTorch 1.7.0, use the following command:
-  pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/index.html
+  The rule for installing the latest mmcv-full is as follows:  
+  pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/{cu_version}/{torch_version}/index.html  
+  Please replace {cu_version} and {torch_version} in the url to your desired one. For example, to install the latest mmcv-full with CUDA 11 and PyTorch 1.7.0, use the following command:  
+  pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/index.html  
   For more details, please refer the the following tables and delete =={mmcv_version}.
 
 ---
