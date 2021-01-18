@@ -4,11 +4,12 @@ Passed on : `20200118`
 Tester : `VisualDust | Miya@Akasaki.space`  
 Using : `anaconda | pip`  
 Platform : `Arch Linux` info below :  
-screenfetch :  
-```none
-                   -`                 
+screenfetch :
+
+`````none
+                   -`
                   .o+`                 visualdust@VDLaptop
-                 `ooo/                 OS: Arch Linux 
+                 `ooo/                 OS: Arch Linux
                 `+oooo:                Kernel: x86_64 Linux 5.10.7-arch1-1
                `+oooooo:               Uptime: 7h 13m
                -+oooooo+:              Packages: 1635
@@ -22,19 +23,23 @@ screenfetch :
       :osssssss/        osssso+++.     CPU: Intel Core i7-10510U @ 8x 4.9GHz [78.0°C]
      /ossssssss/        +ssssooo/-     GPU: GeForce MX250
    `/ossssso+/:-        -:/+osssso+-   RAM: 9758MiB / 15741MiB
-  `+sso+:-`                 `.-/+oso: 
+  `+sso+:-`                 `.-/+oso:
  `++:.                           `-/+/
  .`                                 `/
 
-```  
-nvcc -V :  
+`````
+
+nvcc -V :
+
 ```none
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2019 NVIDIA Corporation
 Built on Sun_Jul_28_19:07:16_PDT_2019
 Cuda compilation tools, release 10.1, V10.1.243
 ```
-nvidia-smi :  
+
+nvidia-smi :
+
 ```none
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
@@ -47,7 +52,7 @@ nvidia-smi :
 | N/A   43C    P8    N/A /  N/A |      4MiB /  2002MiB |      0%      Default |
 |                               |                      |                  N/A |
 +-------------------------------+----------------------+----------------------+
-                                                                               
+
 +-----------------------------------------------------------------------------+
 | Processes:                                                                  |
 |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
@@ -57,6 +62,7 @@ nvidia-smi :
 +-----------------------------------------------------------------------------+
 
 ```
+
 ---
 
 > Shell script
@@ -68,32 +74,32 @@ conda create -n open-mmlab python=3.6 -y
 conda activate open-mmlab
 ```
 
-查看nvcc信息
+查看 nvcc 信息
 
 ```bash
 nvcc -V
 ```
 
-安装合适版本的pytorch。请注意，其中的10.1是测试环境时对应的cuda版本
+安装合适版本的 pytorch。请注意，其中的 10.1 是测试环境时对应的 cuda 版本
 
 ```bash
 conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
 ```
 
-安装mmcv-full
+安装 mmcv-full
 
 ```bash
 pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
 ```
 
-克隆mmdetection
+克隆 mmdetection
 
 ```bash
 git clone https://github.com/open-mmlab/mmdetection.git
 cd mmdetection
 ```
 
-安装mmdetection
+安装 mmdetection
 
 ```bash
 pip install -r requirements/build.txt
@@ -101,9 +107,10 @@ pip install -v -e .  # or "python setup.py develop
 ```
 
 ---
+
 > 验证安装
 
-运行下列python代码查看是否报错。如果没有，则安装成功。
+运行下列 python 代码查看是否报错。如果没有，则安装成功。
 
 ```python
 from mmdet.apis import init_detector, inference_detector
@@ -117,7 +124,19 @@ inference_detector(model, 'demo/demo.jpg')
 
 ---
 
-> 附录 : pip list after configuration  
+> 可能出现的错误
+
+- mmdetection No module named 'mmcv.\_ext'  
+   这可能是 mmcv 安装错误导致的。应该安装的包为 mmcv-full，而安装的包是 mmcv。如果遇到这样的错误，请卸载 mmcv 包并重新安装 mmcv-full 包。具体安装方法参照上文中出现的命令行，或参考[官方说明](https://github.com/open-mmlab/mmcv)配置其他版本的 mmcv。相关说明：
+  The rule for installing the latest mmcv-full is as follows:
+  pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/{cu_version}/{torch_version}/index.html
+  Please replace {cu_version} and {torch_version} in the url to your desired one. For example, to install the latest mmcv-full with CUDA 11 and PyTorch 1.7.0, use the following command:
+  pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/index.html
+  For more details, please refer the the following tables and delete =={mmcv_version}.
+
+---
+
+> 附录 : pip list after configuration
 
 ```none
 addict             2.4.0
