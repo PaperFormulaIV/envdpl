@@ -6,7 +6,7 @@ Using : `anaconda | pip`
 Platform : `Ubuntu18.04` info below :  
 screenfetch :
 
-`````none
+``````none
                           ./+o+-       ray@ProfessorRay
                   yyyyy- -yyyyyy+      OS: Ubuntu 18.04 bionic
                ://+//////-yyyyyyo      Kernel: x86_64 Linux 5.4.0-60-generic
@@ -16,17 +16,17 @@ screenfetch :
        .:+o:+o/.          `+sssoo+/    CPU: Intel Xeon Silver 4210 @ 40x 3.2GHz [39.0°C]
   .++/+:+oo+o:`             /sssooo.   GPU: GeForce RTX 2080 Ti, GeForce RTX 2080 Ti
  /+++//+:`oo+o               /::--:.   RAM: 1240MiB / 64052MiB
- \+/+o+++`o++o               ++////.  
-  .++.o+++oo+:`             /dddhhh.  
-       .+.o+oo:.          `oddhhhh+   
-        \+.++o+o``-````.:ohdhhhhh+    
-         `:o+++ `ohhhhhhhhyo++os:     
-           .o:`.syhhhhhhh/.oo++o`     
-               /osyyyyyyo++ooo+++/    
-                   ````` +oo+++o\:    
-                          `oo++.    
+ \+/+o+++`o++o               ++////.
+  .++.o+++oo+:`             /dddhhh.
+       .+.o+oo:.          `oddhhhh+
+        \+.++o+o``-````.:ohdhhhhh+
+         `:o+++ `ohhhhhhhhyo++os:
+           .o:`.syhhhhhhh/.oo++o`
+               /osyyyyyyo++ooo+++/
+                   ````` +oo+++o\:
+                          `oo++.
 
-`````
+``````
 
 nvcc -V :
 
@@ -111,6 +111,7 @@ python setup.py build develop
 运行下列 python 代码查看是否报错。如果没有，则安装成功。
 
 从配置文件中选出一个网络，下载对应的模型，执行如下指令。
+
 ```bash
 python demo/demo.py \
     --config-file configs/FCOS-Detection/R_50_1x.yaml \
@@ -130,7 +131,7 @@ python demo/demo.py \
 
 ```none
 absl-py                0.11.0
-AdelaiDet              0.2.0               
+AdelaiDet              0.2.0
 backcall               0.2.0
 cachetools             4.2.0
 certifi                2020.12.5
